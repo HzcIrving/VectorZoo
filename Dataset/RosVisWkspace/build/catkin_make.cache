@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/mnt/ssd/ArgDataset/VectorZoo/Dataset/RosVisWkspace/devel -DCMAKE_INSTALL_PREFIX=/mnt/ssd/ArgDataset/VectorZoo/Dataset/RosVisWkspace/install -G Unix Makefiles
