@@ -12,7 +12,7 @@ import torch.nn.functional as F
 """
 Global Graph for High-order Interactions 
 - 在Polyline Node Features {P(1),...,P(P)}基础上，构建全局交互图 
-    - Graph Neural Network (self-attn & global attn) 
+    - Graph Neural Network (self-attn & multiply-layer) 
     
 """
 
