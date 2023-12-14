@@ -19,7 +19,7 @@ from torch_geometric.data import DataLoader, DataListLoader, Batch, Data
 
 from Models.GlobalGraph import GlobalGraph, SelfAttentionFCLayer  
 from Models.SubGraph import SubGraph 
-from Models.MLP import MLP 
+from Models.Layers.MLP import MLP 
 
 
 # TODO 参数固化了，需要灵活传参
@@ -30,7 +30,7 @@ class VectorNetBackbone(nn.Module):
     """
     def __init__(self,
                  in_channels=8,
-                 num_subgraph_layres=3,
+                 num_subgraph_layers=3,
                  num_global_graph_layer=1,
                  subgraph_width=64,
                  global_graph_width=64,
@@ -39,13 +39,13 @@ class VectorNetBackbone(nn.Module):
                  device=torch.device("cpu")):
         super(VectorNetBackbone, self).__init__()
         # some params
-        self.num_subgraph_layres = num_subgraph_layres
+        self.num_subgraph_layers = num_subgraph_layers
         self.global_graph_width = global_graph_width
 
         self.device = device
 
         # subgraph feature extractor
-        self.subgraph = SubGraph(in_channels, num_subgraph_layres, subgraph_width)
+        self.subgraph = SubGraph(in_channels, num_subgraph_layers, subgraph_width)
 
         # global graph
         self.global_graph = GlobalGraph(self.subgraph.out_channels + 2,
@@ -106,10 +106,6 @@ class VectorNetBackbone(nn.Module):
             global_graph_out = self.global_graph(x, valid_lens=valid_lens)
 
             return global_graph_out, None, None
-
-
-
-
 
 
 

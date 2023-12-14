@@ -43,7 +43,7 @@ class TrainingSettings:
     verbose: bool = True # whether printing debug messages 
     
     
-TODO 
+# TODO  抽象Trainer
 class Trainer(object): 
     """
     接口说明 

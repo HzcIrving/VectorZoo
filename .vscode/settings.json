@@ -1,4 +1,16 @@
 {
     "todo-tree.tree.disableCompactFolders": true,
-    "todo-tree.tree.showCountsInTree": true
+    "todo-tree.tree.showCountsInTree": true, 
+
+    "python.autoComplete.extraPaths": [
+        // "/opt/ros/melodic/lib/python2.7/dist-packages",
+        // "/home/irvinghe/ros_tutorial/devel/lib/python2.7/dist-packages"
+        // "/home/irvinghe/anaconda/", 
+        "/media/irvinghe/CodingSpace/ArgDataset/argoverse-api/"
+        
+    ], 
+    
+    "python.analysis.extraPaths": [
+        "/media/irvinghe/CodingSpace/ArgDataset/argoverse-api/"
+    ]
 }
